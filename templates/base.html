@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://v3.bootcss.com/examples/dashboard/ -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+
+    <title>客户展示页面</title>
+
+    <!-- Bootstrap core CSS -->
+    {% load static %}
+    <link href="{% static 'bootstrap-3.3.7/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}">
+    {% block page-css %}
+
+    {% endblock %}
+
+<body>
+
+{% include 'nav.html' %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+{#                <li><a href="{% url 'customer_list' %}">客户列表</a></li>#}
+{#                <li><a href="{% url 'my_customer' %}">我的客户</a></li>#}
+{#                <li><a href="{% url 'consult_record_list' 0 %}">跟进记录</a></li>#}
+{#                <li><a href="{% url 'enrollment_list' 0 %}">查看报名表</a></li>#}
+{#                <li><a href="{% url 'class_list' %}">班级列表</a></li>#}
+                {% load rbac %}
+                {% show_menu request %}
+            </ul>
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            {% block page-main %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'jquery.js' %}"></script>
+<script src="{% static 'bootstrap-3.3.7/js/bootstrap.js' %}"></script>
+{% block page-js %}
+
+{% endblock %}
+
+</body>
+</html>

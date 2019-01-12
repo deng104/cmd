@@ -1,0 +1,11 @@
+<ul class="nav nav-sidebar">
+    {% for menu in menu_list %}
+        <li style="text-align: center" class="{{ menu.class }}"><a href="{{ menu.url }}">
+            <span class="icon-wrap">
+                <i class="fa {{ menu.icon }}"></i>
+            </span>
+            {{ menu.title }}
+        </a></li>
+    {% endfor %}
+
+ </ul>

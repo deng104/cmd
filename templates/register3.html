@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <div>姓名:
+        <input type="text" name="name">
+    </div>
+    <div>邮箱：　
+       <input type="email" name="email">
+    </div>
+    <div>密码：　
+        <input type="password" name="password">
+    </div>
+    <button type="submit">提交</button>
+
+</form>
+</body>
+</html>

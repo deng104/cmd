@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block page-main %}
+
+    <div>
+        <h2 class="text-center">{% if edit_id %}编辑报名表{% else %}添加报名表{% endif %}</h2>
+        <form action="" method="post" class="form-horizontal" novalidate>
+            {% csrf_token %}
+            {% for field in form_obj %}
+                <div class="form-group {% if field.errors.0 %}has-error{% endif %}">
+                    <label for="{{ field.id_for_label }}" class="col-sm-2 control-label">{{ field.label }}</label>
+                    <div class="col-sm-10">
+                        {{ field }}
+                        <span class="help-block">{{ field.errors.0 }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn-default">提交</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
