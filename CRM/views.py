@@ -14,16 +14,6 @@ from django.conf import settings
 from rbvc.utils import permission
 
 
-# Create your views here.
-
-#
-# class RegForm(forms.Form):
-#     email = forms.EmailField(
-#         label='邮箱',
-#         widget=
-#     )
-
-
 class LoginView(views.View):
     def get(self, request):
         return render(request, 'login.html')
@@ -45,6 +35,7 @@ class LoginView(views.View):
             return render(request, 'login.html', {'error_msg': '邮箱或密码错误'})
 
 
+# 两个登录界面, 都配置有样式, 想用哪个用哪个
 def login2(request):
     if request.method == 'POST':
         username = request.POST.get('username')
