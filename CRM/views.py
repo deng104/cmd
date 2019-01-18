@@ -35,7 +35,7 @@ class LoginView(views.View):
             return render(request, 'login.html', {'error_msg': '邮箱或密码错误'})
 
 
-# 两个登录界面, 都配置有样式, 想用哪个用哪个
+# 两个登录界面, 都配置有样式, 想用哪个用哪个.
 def login2(request):
     if request.method == 'POST':
         username = request.POST.get('username')
