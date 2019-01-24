@@ -26,8 +26,6 @@ urlpatterns = [
     url(r'^register/', views.register),
     url(r'^logout/', views.logout),
     url(r'^reg/', views.reg),
-    url(r'^check_email/', views.check_email, name='check_email'),
-    # =====================================
     url(r'^CRM/', include(crm_urls)),
 
 ]
