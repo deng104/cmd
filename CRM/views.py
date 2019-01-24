@@ -73,18 +73,6 @@ def reg(request):
     return render(request, 'reg.html', {'form_obj': obj})
 
 
-'''
-# ajax检查密码是否一致
-def check_password(request):
-    ret = {'status': 0}
-    password = request.POST.get('password')
-    re_password = request.POST.get('re_password')
-    if password == re_password:
-        ret['error_msg'] = '两次密码不一致'
-        ret['status'] = 1
-    return JsonResponse(ret)
-'''
-
 
 # ajax检查邮箱是否存在
 def check_email(request):
@@ -134,7 +122,7 @@ class CustomerListView(views.View):
         else:
             # 获取所有公户信息
             query_set = Customer.objects.filter(consultant__isnull=True)
-        # 根据模糊检索的条件对query_set再做过滤
+        # 根据模糊检索的条件对query_set再做过滤.
         # 找到name, qq, qq_name字段包含query_value的哪些数据就是搜索的结果
         q = self._get_query_q(['name', 'qq', 'qq_name'])
         query_set = query_set.filter(q)
@@ -288,8 +276,7 @@ class EnrollmentListView(views.View):
 def enrollment(request, customer_id=None, enrollment_id=None):
     # 先根据报名表id去查询
     enrollment_obj = Enrollment.objects.filter(id=enrollment_id).first()
-    #  查询不到报名表说明是新增报名表
-    #   又因为是新增报名表必须指定客户
+    #  查询不到报名表说明是新增报名表, 又因为是新增报名表必须指定客户
     if not enrollment_obj:
         enrollment_obj = Enrollment(customer=Customer.objects.filter(id=customer_id).first())
     form_obj = EnrollmentForm(instance=enrollment_obj)
