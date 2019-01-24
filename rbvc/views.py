@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect, HttpResponse
 from rbvc.models import UserInfo
 from rbvc.utils import permission
 
-# Create your views here.
-
 
 def login(request):
     error_msg = ''
