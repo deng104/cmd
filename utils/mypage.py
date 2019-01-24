@@ -1,5 +1,5 @@
 """
-自定义分页组件
+自定义分页组件,
 可以返回分页的数据和分页的HTML代码
 """
 from django.http import QueryDict
