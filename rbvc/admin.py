@@ -1,8 +1,6 @@
 from django.contrib import admin
 from rbvc.models import Permission, Role
 
-# Register your models here.
-
 
 class PermissionAdmin(admin.ModelAdmin):
     list_display = ['title', 'url', 'is_menu', 'icon']  # 控制admin页面显示哪些字段
