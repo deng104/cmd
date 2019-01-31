@@ -10,7 +10,6 @@ def init(request, user_obj):
     根据当前登录的用户初始化权限信息和菜单信息, 保存到session中
     :param request: 请求对象
     :param user_obj: 登录的用户对象
-    :return:
     """
     # 登陆成功, 将当前用户的权限信息查询出来
     queryset = user_obj.roles.all().filter(permissions__isnull=False).values(
