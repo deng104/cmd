@@ -5,9 +5,6 @@ from multiselectfield import MultiSelectField
 from django.utils.safestring import mark_safe
 
 
-# Create your models here.
-
-
 # 课程
 course_choices = (('Linux', 'Linux中高级'),
                   ('PythonFullStack', 'Python高级全栈开发'),
