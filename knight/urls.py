@@ -27,5 +27,4 @@ urlpatterns = [
     url(r'^logout/', views.logout),
     url(r'^reg/', views.reg),
     url(r'^CRM/', include(crm_urls)),
-
 ]
