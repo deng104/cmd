@@ -220,7 +220,7 @@ def edit_customer(request, edit_id):
 '''
 
 
-# 新增和编辑二合一得视图函数
+# 新增和编辑二合一的视图函数
 @login_required
 def customer(request, edit_id=None):
     # 如果edit_id= None表示是新增操作
