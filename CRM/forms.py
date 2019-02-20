@@ -14,7 +14,7 @@ class RegisterForm(forms.Form):
     name = forms.CharField(
         max_length=20,
         label='姓名',
-        strip=True,  # 是否移除用户输入空白
+        strip=True,  # 是否移除用户输入空白.
         error_messages={
             'required': '不能为空',
             'invalid': '格式错误',
@@ -92,7 +92,7 @@ class CustomerForm(BootstrapBaseForm):
         }
 
 
-# 沟通记录的form
+# 沟通记录的form.
 class ConsultRecordForm(forms.ModelForm):
 
     class Meta:
@@ -140,7 +140,7 @@ class CourseRecordForm(BootstrapBaseForm):
         fields = '__all__'
 
 
-#  学习记录
+#  学习记录.
 class StudyRecordForm(BootstrapBaseForm):
     class Meta:
         model = StudyRecord
