@@ -35,7 +35,7 @@ class LoginView(views.View):
             return render(request, 'login.html', {'error_msg': '邮箱或密码错误'})
 
 
-# 两个登录界面, 都配置有样式, 想用哪个用哪个.
+# 两个登录界面.都配置有样式.想用哪个用哪个.
 def login2(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -128,7 +128,7 @@ class CustomerListView(views.View):
         query_set = query_set.filter(q)
         page_obj = Pagination(current_page, query_set.count(), url_prefix, qd, per_page=3)
         data = query_set[page_obj.start:page_obj.end]
-        # 2. 返回之前的页面
+        # 2.0 返回之前的页面
         # 2.1 获取当前请求的带query参数的URL
         url = request.get_full_path()
         # 2.2 生成一个空的QueryDict对象
@@ -289,7 +289,7 @@ def enrollment(request, customer_id=None, enrollment_id=None):
             new_obj.customer.save()  # 改的那张表的字段就保存那个对象
             return redirect(reverse('enrollment_list', kwargs={'customer_id': 0}))
         else:
-            return HttpResponse('出错啦')
+            return HttpResponse('出错啦!')
     return render(request, 'enrollment.html', {'form_obj': form_obj})
 
 
