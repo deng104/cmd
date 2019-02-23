@@ -7,7 +7,6 @@ urlpatterns = [
     url(r'add/$', views.customer, name='add_customer'),
     url(r'edit_customer/(\d+)/$', views.customer, name='edit_customer'),
     url(r'customer/(\d+)/$', views.customer, name='customer'),
-    # ============================================================
     #  沟通记录
     url(r'consult_record_list/(?P<cid>\d+)$', views.consult_record_list, name='consult_record_list'),
     url(r'add_consult_record/$', views.consult_record, name='add_consult_record'),
@@ -28,6 +27,4 @@ urlpatterns = [
     url(r'^study_record_list/(?P<course_record_id>\d+)/$', mei_views.study_record_list, name='study_record_list'),
     #  缴费记录
     url(r'^payment_record_list/$', views.PaymentRecordView.as_view(), name='payment_record_list'),
-
-
 ]
