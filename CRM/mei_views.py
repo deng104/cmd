@@ -35,10 +35,10 @@ class CourseListView(views.View):
         return render(request, 'course_list.html', {'course_record_list': query_set, 'next_url': qd.urlencode(), 'class_id': class_id})
 
     def post(self, request, class_id):
-        # 1. 从POST提交过来的数据里找action和勾选的课程记录id
+        #  从POST提交过来的数据里找action和勾选的课程记录id
         cid = request.POST.getlist('cid')
         action = request.POST.get('action')
-        # 2. 利用反射执行指定的动作
+        # 利用反射执行指定的动作
         if hasattr(self, '_{}'.format(action)):
             ret = getattr(self, '_{}'.format(action))(cid)
         else:
