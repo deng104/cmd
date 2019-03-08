@@ -6,13 +6,13 @@ from django.utils.safestring import mark_safe
 
 
 # 课程
-course_choices = (('Linux', 'Linux中高级'),
-                  ('PythonFullStack', 'Python高级全栈开发'),
-                  ('Go', 'Golang高级开发'),
+course_choices = (('四年级', '四年级语文'),
+                  ('五年级', '五年级英语'),
+                  ('六年级', '六年级数学'),
                   )
 
 # 班级类型
-class_type_choices = (('fulltime', '脱产班',),
+class_type_choices = (('fulltime', '面授班',),
                       ('online', '网络班'),
                       ('weekend', '周末班',),)
 
@@ -24,7 +24,7 @@ source_type = (('qq', "qq群"),
                ('office_direct', "直接上门"),
                ('WoM', "口碑"),
                ('public_class', "公开课"),
-               ('website_luffy', "路飞官网"),
+               ('website_luffy', "学校官网"),
                ('others', "其它"),)
 
 # 报名情况
