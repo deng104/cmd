@@ -189,36 +189,6 @@ class CustomerListView(views.View):
         return q
 
 
-'''
-# 添加用户
-@login_required
-def add_customer(request):
-    form_obj = CustomerForm()
-    if request.method == 'POST':
-        form_obj = CustomerForm(request.POST)
-        if form_obj.is_valid():
-            form_obj.save()
-            return redirect(reverse('customer_list'))
-    return render(request, 'add_customer.html', {'form_obj': form_obj})
-
-
-# 编辑客户
-@login_required
-def edit_customer(request, edit_id):
-    print(edit_id)
-    customer_obj = Customer.objects.filter(pk=edit_id).first()
-    # 使用instance对象得数据填充生成input标签
-    form_obj = CustomerForm(instance=customer_obj)
-    if request.method == 'POST':
-        # 使用POST提交得数据去更新指定得instance实例
-        form_obj = CustomerForm(request.POST, instance=customer_obj)
-        if form_obj.is_valid():
-            form_obj.save()
-            #  如果能从URL获取next参数就跳转到制定的URL, 没有就默认跳转到客户列表页
-            return redirect(reverse('customer_list'))
-    return render(request, 'edit_customer.html', {'form_obj': form_obj})
-'''
-
 
 # 新增和编辑二合一的视图函数
 @login_required
