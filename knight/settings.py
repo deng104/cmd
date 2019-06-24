@@ -83,7 +83,8 @@ DATABASES = {
         'NAME': 'CRM',
         'HOST': '127.0.0.1',
         'PORT': 3306,
-        'USER': 'root'
+        'USER': 'root',
+        "PASSWORD": "123",
     }
 }
 

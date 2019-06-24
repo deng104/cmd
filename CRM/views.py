@@ -27,7 +27,7 @@ class LoginView(views.View):
             auth.login(request, user_obj)
             permission.init(request, user_obj)
             if is_check:
-                request.session.set_expiry(7*24*60*60)
+                request.session.set_expiry(7 * 24 * 60 * 60)
             else:
                 request.session.set_expiry(0)
             return redirect(reverse('customer_list'))
@@ -46,7 +46,7 @@ def login2(request):
         if user_obj:
             auth.login(request, user_obj)
             if is_check:
-                request.session.set_expiry(7*24*60*60)
+                request.session.set_expiry(7 * 24 * 60 * 60)
             else:
                 request.session.set_expiry(0)
             return redirect('customer_list')
@@ -71,7 +71,6 @@ def reg(request):
             auth_obj = UserProfile.objects.create_user(**obj.cleaned_data)
             return redirect('/login/')
     return render(request, 'reg.html', {'form_obj': obj})
-
 
 
 # ajax检查邮箱是否存在
@@ -138,7 +137,8 @@ class CustomerListView(views.View):
         # 2.4 利用QueryDict内置方法编码成URL
         next_url = query_params.urlencode()
         # 在页面上展示出来
-        return render(request, 'customer_list.html', {'customer_list': data, 'next_url': next_url, 'page_html': page_obj.page_html()})
+        return render(request, 'customer_list.html',
+                      {'customer_list': data, 'next_url': next_url, 'page_html': page_obj.page_html()})
 
     @method_decorator(login_required)
     def post(self, request):
@@ -187,7 +187,6 @@ class CustomerListView(views.View):
         for field in field_list:
             q.children.append(Q(('{}__icontains'.format(field), query_value)))
         return q
-
 
 
 # 新增和编辑二合一的视图函数
